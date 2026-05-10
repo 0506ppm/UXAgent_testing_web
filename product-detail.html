@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>娘家廚房x職人雞 滷蛋白君-醬香 - 娘家保健生技</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 頂部推廣訊息 -->
+    <div class="top-promo-bar">
+        首次下載APP送350折價券！
+    </div>
+
+    <!-- 頂部導航 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="products.html" title="娘家保健生技">
+                        <img src="images/娘家＿網頁＿商標.jpg" alt="娘家保健生技" style="height: 50px;" />
+                    </a>
+                </div>
+
+                <div class="search-bar">
+                    <input
+                        type="text"
+                        id="search-input"
+                        name="search"
+                        placeholder="搜尋商品..."
+                        aria-label="搜尋商品"
+                    />
+                    <button
+                        type="button"
+                        id="search-btn"
+                        title="搜尋"
+                    >
+                        搜尋
+                    </button>
+                </div>
+
+                <div class="header-actions">
+                    <a href="#" class="header-link" title="會員登入">會員登入</a>
+                    <a href="cart.html" class="cart-link" title="購物車">
+                        <span class="cart-icon">🛒</span>
+                        購物車
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 導航菜單 -->
+            <nav class="main-nav">
+                <a href="#" class="nav-link">母親節送禮</a>
+                <a href="#" class="nav-link">TOP熱銷</a>
+                <a href="#" class="nav-link">會員專區</a>
+                <a href="products.html" class="nav-link active">美味上線｜娘家廚房</a>
+                <a href="#" class="nav-link">大紅麴</a>
+                <a href="#" class="nav-link">滴雞精</a>
+                <a href="#" class="nav-link">益生菌</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 麵包屑 -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="products.html">首頁</a>
+            <span class="separator">></span>
+            <a href="products.html">美味上線｜娘家廚房</a>
+            <span class="separator">></span>
+            <span id="product-breadcrumb">娘家廚房x職人雞 滷蛋白君-醬香</span>
+        </div>
+    </div>
+
+    <!-- 主要內容 -->
+    <main class="product-detail-page">
+        <div class="container">
+            <div class="product-detail-container">
+                <!-- 左側：商品圖片 -->
+                <div class="product-gallery">
+                    <div class="main-image-container">
+                        <img
+                            id="main-product-image"
+                            src="images/product-1.jpg"
+                            alt="娘家廚房x職人雞 滷蛋白君-醬香"
+                            onerror="this.src='https://via.placeholder.com/500x500?text=商品主圖'"
+                        />
+                    </div>
+                    <div class="thumbnail-container">
+                        <img
+                            src="images/product-1.jpg"
+                            alt="商品圖片 1"
+                            class="thumbnail active"
+                            data-index="0"
+                            onerror="this.src='https://via.placeholder.com/100x100?text=1'"
+                        />
+                        <img
+                            src="images/product-1-2.jpg"
+                            alt="商品圖片 2"
+                            class="thumbnail"
+                            data-index="1"
+                            onerror="this.src='https://via.placeholder.com/100x100?text=2'"
+                        />
+                        <img
+                            src="images/product-1-3.jpg"
+                            alt="商品圖片 3"
+                            class="thumbnail"
+                            data-index="2"
+                            onerror="this.src='https://via.placeholder.com/100x100?text=3'"
+                        />
+                        <img
+                            src="images/product-1-4.jpg"
+                            alt="商品圖片 4"
+                            class="thumbnail"
+                            data-index="3"
+                            onerror="this.src='https://via.placeholder.com/100x100?text=4'"
+                        />
+                    </div>
+                </div>
+
+                <!-- 右側：商品資訊 -->
+                <div class="product-info-section">
+                    <h1 class="product-detail-title" id="product-title">
+                        娘家廚房x職人雞 滷蛋白君-醬香
+                    </h1>
+
+                    <!-- 商品編號 -->
+                    <div class="product-sku">
+                        商品編號：<span id="product-sku">32695120</span>
+                    </div>
+
+                    <!-- 價格區域 -->
+                    <div class="price-section">
+                        <div class="price-row">
+                            <span class="original-price">NT$ 250</span>
+                            <span class="sale-price">NT$ 225</span>
+                            <span class="discount-badge">9折</span>
+                        </div>
+                        <div class="price-validity">
+                            優惠期限：2050/06/04
+                        </div>
+                    </div>
+
+                    <!-- 促銷活動 -->
+                    <div class="promotion-section">
+                        <div class="promotion-item">
+                            <span class="promo-tag">母親節限定</span>
+                            <span class="promo-text">滿3,600元送好禮</span>
+                        </div>
+                        <div class="promotion-item">
+                            <span class="promo-tag">APP獨享</span>
+                            <span class="promo-text">購買即贈精選飲品</span>
+                        </div>
+                        <div class="promotion-item">
+                            <span class="promo-tag">會員折扣</span>
+                            <span class="promo-text">等級折扣4-8%</span>
+                        </div>
+                    </div>
+
+                    <!-- 商品特點 -->
+                    <div class="product-highlights">
+                        <ul>
+                            <li>✓ 使用動福認證雞蛋，健康有保障</li>
+                            <li>✓ 低卡零脂肪，豐富蛋白質，健身族首選</li>
+                            <li>✓ 常溫獨立包裝，無添加防腐劑</li>
+                        </ul>
+                    </div>
+
+                    <!-- 商品規格 -->
+                    <div class="product-specs">
+                        <div class="spec-row">
+                            <span class="spec-label">重量：</span>
+                            <span class="spec-value">175g</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">尺寸：</span>
+                            <span class="spec-value">13×7×21 cm</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">保存方式：</span>
+                            <span class="spec-value">常溫</span>
+                        </div>
+                    </div>
+
+                    <!-- 數量選擇 -->
+                    <div class="quantity-section">
+                        <label for="quantity-input">數量：</label>
+                        <div class="quantity-control">
+                            <button
+                                type="button"
+                                id="quantity-decrease"
+                                class="quantity-btn"
+                                aria-label="減少數量"
+                            >
+                                -
+                            </button>
+                            <input
+                                type="number"
+                                id="quantity-input"
+                                name="quantity"
+                                value="1"
+                                min="1"
+                                max="10"
+                                aria-label="購買數量"
+                            />
+                            <button
+                                type="button"
+                                id="quantity-increase"
+                                class="quantity-btn"
+                                aria-label="增加數量"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 操作按鈕 -->
+                    <div class="action-buttons">
+                        <button
+                            type="button"
+                            id="add-to-cart-btn"
+                            class="btn btn-add-cart-large"
+                            title="加入購物車"
+                        >
+                            加入購物車
+                        </button>
+                        <button
+                            type="button"
+                            id="buy-now-btn"
+                            class="btn btn-buy-now-large"
+                            title="立即購買"
+                        >
+                            立即購買
+                        </button>
+                        <button
+                            type="button"
+                            id="add-to-wishlist-btn"
+                            class="btn btn-wishlist"
+                            title="加入收藏"
+                        >
+                            ♡ 我的收藏
+                        </button>
+                    </div>
+
+                    <!-- 配送資訊 -->
+                    <div class="shipping-info">
+                        <h3>配送方式</h3>
+                        <div class="shipping-option">
+                            <input
+                                type="radio"
+                                id="shipping-family"
+                                name="shipping"
+                                value="family"
+                                checked
+                            />
+                            <label for="shipping-family">
+                                全家取貨：NT$60 (滿699免運)
+                            </label>
+                        </div>
+                        <div class="shipping-option">
+                            <input
+                                type="radio"
+                                id="shipping-711"
+                                name="shipping"
+                                value="711"
+                            />
+                            <label for="shipping-711">
+                                7-11取貨：NT$60 (滿1,500免運)
+                            </label>
+                        </div>
+                        <div class="shipping-option">
+                            <input
+                                type="radio"
+                                id="shipping-home"
+                                name="shipping"
+                                value="home"
+                            />
+                            <label for="shipping-home">
+                                宅配到府：NT$150 (滿1,500免運)
+                            </label>
+                        </div>
+                        <div class="shipping-option">
+                            <input
+                                type="radio"
+                                id="shipping-cod"
+                                name="shipping"
+                                value="cod"
+                            />
+                            <label for="shipping-cod">
+                                貨到付款
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 付款方式 -->
+                    <div class="payment-info">
+                        <h3>付款方式</h3>
+                        <div class="payment-methods">
+                            <span class="payment-method">信用卡</span>
+                            <span class="payment-method">LINE Pay</span>
+                            <span class="payment-method">Apple Pay</span>
+                            <span class="payment-method">ATM轉帳</span>
+                            <span class="payment-method">貨到付款</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品詳細說明 -->
+            <div class="product-description-section">
+                <div class="tabs">
+                    <button
+                        type="button"
+                        class="tab-btn active"
+                        data-tab="description"
+                    >
+                        商品說明
+                    </button>
+                    <button
+                        type="button"
+                        class="tab-btn"
+                        data-tab="specifications"
+                    >
+                        規格說明
+                    </button>
+                    <button
+                        type="button"
+                        class="tab-btn"
+                        data-tab="shipping"
+                    >
+                        配送說明
+                    </button>
+                </div>
+
+                <div class="tab-content active" id="tab-description">
+                    <h2>商品說明</h2>
+                    <div class="description-content">
+                        <h3>娘家廚房x職人雞 滷蛋白君-醬香</h3>
+                        <p>
+                            精選動物福利認證雞蛋，採用獨家滷製配方，醬香濃郁，口感Q彈。
+                            每顆蛋白都經過精心滷製，保留了蛋白的完整營養，同時去除了蛋黃的脂肪。
+                        </p>
+                        <h4>產品特色：</h4>
+                        <ul>
+                            <li>使用動物福利認證雞蛋，來源安全有保障</li>
+                            <li>低卡路里、零脂肪，豐富蛋白質</li>
+                            <li>獨立包裝，方便攜帶，隨時補充蛋白質</li>
+                            <li>常溫保存，無添加防腐劑</li>
+                            <li>適合健身、減重、上班族補充營養</li>
+                        </ul>
+                        <h4>適合對象：</h4>
+                        <ul>
+                            <li>健身愛好者：補充優質蛋白質</li>
+                            <li>減重族群：低卡零脂肪的營養選擇</li>
+                            <li>忙碌上班族：方便快速的營養補給</li>
+                            <li>注重健康飲食者：安全無添加</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-specifications">
+                    <h2>規格說明</h2>
+                    <table class="spec-table">
+                        <tr>
+                            <th>商品編號</th>
+                            <td>32695120</td>
+                        </tr>
+                        <tr>
+                            <th>重量</th>
+                            <td>175g</td>
+                        </tr>
+                        <tr>
+                            <th>尺寸</th>
+                            <td>13×7×21 cm</td>
+                        </tr>
+                        <tr>
+                            <th>保存方式</th>
+                            <td>常溫保存</td>
+                        </tr>
+                        <tr>
+                            <th>保存期限</th>
+                            <td>180天</td>
+                        </tr>
+                        <tr>
+                            <th>產地</th>
+                            <td>台灣</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="tab-shipping">
+                    <h2>配送說明</h2>
+                    <div class="shipping-details">
+                        <h4>配送方式：</h4>
+                        <ul>
+                            <li><strong>全家取貨：</strong>運費 NT$60，滿 NT$699 免運</li>
+                            <li><strong>7-11取貨：</strong>運費 NT$60，滿 NT$1,500 免運</li>
+                            <li><strong>宅配到府：</strong>運費 NT$150，滿 NT$1,500 免運</li>
+                            <li><strong>貨到付款：</strong>另加收手續費 NT$30</li>
+                        </ul>
+                        <h4>配送時間：</h4>
+                        <ul>
+                            <li>訂單確認後 1-3 個工作天內出貨</li>
+                            <li>超商取貨約 2-4 個工作天送達門市</li>
+                            <li>宅配到府約 1-3 個工作天送達</li>
+                        </ul>
+                        <h4>退換貨說明：</h4>
+                        <ul>
+                            <li>商品享有 7 天鑑賞期（非試用期）</li>
+                            <li>退換貨商品須保持完整包裝</li>
+                            <li>食品類商品除瑕疵外，恕不接受退換貨</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 推薦商品 -->
+            <div class="recommended-section">
+                <h2>推薦商品</h2>
+                <div class="recommended-grid">
+                    <div class="product-card-small">
+                        <img
+                            src="images/product-2.jpg"
+                            alt="娘家大紅麴膠囊"
+                            onerror="this.src='https://via.placeholder.com/200x200?text=商品'"
+                        />
+                        <h4>娘家大紅麴膠囊</h4>
+                        <p class="price">NT$ 1,200</p>
+                    </div>
+                    <div class="product-card-small">
+                        <img
+                            src="images/product-3.jpg"
+                            alt="娘家滴雞精禮盒"
+                            onerror="this.src='https://via.placeholder.com/200x200?text=商品'"
+                        />
+                        <h4>娘家滴雞精禮盒</h4>
+                        <p class="price">NT$ 2,800</p>
+                    </div>
+                    <div class="product-card-small">
+                        <img
+                            src="images/product-4.jpg"
+                            alt="娘家益生菌"
+                            onerror="this.src='https://via.placeholder.com/200x200?text=商品'"
+                        />
+                        <h4>娘家益生菌</h4>
+                        <p class="price">NT$ 880</p>
+                    </div>
+                    <div class="product-card-small">
+                        <img
+                            src="images/product-5.jpg"
+                            alt="娘家深海魚油"
+                            onerror="this.src='https://via.placeholder.com/200x200?text=商品'"
+                        />
+                        <h4>娘家深海魚油</h4>
+                        <p class="price">NT$ 1,580</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast 提示容器 -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>關於娘家</h4>
+                    <a href="#">品牌故事</a>
+                    <a href="#">門市資訊</a>
+                    <a href="#">聯絡我們</a>
+                </div>
+                <div class="footer-section">
+                    <h4>客戶服務</h4>
+                    <a href="#">常見問題</a>
+                    <a href="#">配送說明</a>
+                    <a href="#">退換貨政策</a>
+                </div>
+                <div class="footer-section">
+                    <h4>追蹤我們</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LINE</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 娘家保健生技. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product-detail.js"></script>
+</body>
+</html>
