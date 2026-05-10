@@ -58,6 +58,7 @@ button {
     font-weight: bold;
 }
 
+/* UX 痛點：搜尋框 placeholder 不清楚 */
 .search-bar {
     flex: 1;
     display: flex;
@@ -72,12 +73,17 @@ button {
     font-size: 14px;
 }
 
+.search-bar input::placeholder {
+    color: #d8d8d8;
+    font-size: 12px;
+}
+
 .search-bar button {
     padding: 10px 20px;
-    background-color: #b40101;
-    color: #ffffff;
+    background-color: #c9a5a5;
+    color: #e8e8e8;
     border: none;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .header-actions {
@@ -119,25 +125,30 @@ button {
 }
 
 /* ========== 主導航 ========== */
+/* UX 痛點：導航連結間距太小、點擊區域不足 */
 .main-nav {
     display: flex;
-    gap: 30px;
+    gap: 18px;
     padding: 15px 0;
     border-top: 1px solid #e0e0e0;
 }
 
 .nav-link {
-    color: #333333;
-    font-size: 15px;
+    color: #666666;
+    font-size: 13px;
     padding: 5px 0;
     border-bottom: 2px solid transparent;
     transition: all 0.3s;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    color: #888888;
+    border-bottom-color: transparent;
+}
+
 .nav-link.active {
-    color: #b40101;
-    border-bottom-color: #b40101;
+    color: #999999;
+    border-bottom-color: #d0d0d0;
 }
 
 /* ========== 麵包屑 ========== */
@@ -258,23 +269,25 @@ button {
 }
 
 /* ========== 視圖切換 ========== */
+/* UX 痛點：視圖切換按鈕不明顯，不易識別功能 */
 .view-switcher {
     display: flex;
     gap: 5px;
 }
 
 .view-btn {
-    padding: 8px 12px;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    font-size: 16px;
+    padding: 6px 10px;
+    background-color: #fafafa;
+    border: 1px solid #e8e8e8;
+    font-size: 14px;
+    color: #aaaaaa;
     cursor: pointer;
 }
 
 .view-btn.active {
-    background-color: #f5f5f5;
-    border-color: #b40101;
-    color: #b40101;
+    background-color: #f0f0f0;
+    border-color: #d0d0d0;
+    color: #999999;
 }
 
 /* ========== 簡化版商品網格 (無按鈕) ========== */
@@ -375,40 +388,42 @@ button {
     padding: 15px;
 }
 
+/* UX 痛點：商品標題字太小，難以閱讀 */
 .product-title-simple {
-    font-size: 15px;
-    color: #333333;
+    font-size: 12px;
+    color: #888888;
     margin-bottom: 10px;
     min-height: 40px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
+/* UX 痛點：價格顯示不夠突出 */
 .product-price-simple {
     display: flex;
     align-items: baseline;
-    gap: 8px;
+    gap: 6px;
     margin-bottom: 5px;
 }
 
 .original-price {
-    font-size: 14px;
-    color: #999999;
+    font-size: 12px;
+    color: #bbbbbb;
     text-decoration: line-through;
 }
 
 .sale-price {
-    font-size: 22px;
-    color: #b40101;
-    font-weight: bold;
+    font-size: 18px;
+    color: #999999;
+    font-weight: normal;
 }
 
 .product-discount {
-    font-size: 12px;
-    color: #999999;
+    font-size: 10px;
+    color: #cccccc;
 }
 
 /* ========== 圖標連結 ========== */
@@ -521,32 +536,35 @@ button {
     border-radius: 8px;
 }
 
+/* UX 痛點：價格資訊排版混亂，難以辨識優惠價 */
 .price-row {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
     margin-bottom: 10px;
 }
 
 .price-row .original-price {
-    font-size: 18px;
+    font-size: 16px;
+    color: #bbbbbb;
 }
 
 .price-row .sale-price {
-    font-size: 32px;
+    font-size: 28px;
+    color: #999999;
 }
 
 .discount-badge {
-    background-color: #ff5353;
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 14px;
+    background-color: #e8c8c8;
+    color: #999999;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-size: 11px;
 }
 
 .price-validity {
-    font-size: 13px;
-    color: #666666;
+    font-size: 11px;
+    color: #aaaaaa;
 }
 
 /* 促銷活動 */
@@ -613,6 +631,7 @@ button {
 }
 
 /* 數量選擇 */
+/* UX 痛點：數量按鈕太小，難以點擊 */
 .quantity-section {
     display: flex;
     align-items: center;
@@ -632,26 +651,27 @@ button {
 }
 
 .quantity-btn {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     border: none;
     background-color: #f5f5f5;
-    font-size: 18px;
-    color: #333333;
+    font-size: 14px;
+    color: #999999;
+    cursor: pointer;
 }
 
 .quantity-btn:hover {
-    background-color: #e0e0e0;
+    background-color: #eeeeee;
 }
 
 #quantity-input {
-    width: 60px;
-    height: 40px;
+    width: 45px;
+    height: 28px;
     text-align: center;
     border: none;
     border-left: 1px solid #e0e0e0;
     border-right: 1px solid #e0e0e0;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 /* 操作按鈕 */
@@ -668,41 +688,43 @@ button {
     transition: all 0.3s;
 }
 
+/* UX 痛點：按鈕顏色對比不足，不清楚哪個是主要動作 */
 .btn-add-cart-large {
     flex: 2;
-    background-color: #ffffff;
-    color: #b40101;
-    border: 2px solid #b40101;
+    background-color: #f0f0f0;
+    color: #888888;
+    border: 1px solid #d0d0d0;
 }
 
 .btn-add-cart-large:hover {
-    background-color: #b40101;
-    color: #ffffff;
+    background-color: #e8e8e8;
+    color: #777777;
 }
 
 .btn-buy-now-large {
     flex: 2;
-    background-color: #b40101;
+    background-color: #d4a5a5;
     color: #ffffff;
 }
 
 .btn-buy-now-large:hover {
-    background-color: #900000;
+    background-color: #c99999;
 }
 
 .btn-wishlist {
     flex: 1;
-    background-color: #ffffff;
-    color: #666666;
-    border: 1px solid #e0e0e0;
+    background-color: #fafafa;
+    color: #999999;
+    border: 1px solid #e8e8e8;
 }
 
 .btn-wishlist:hover {
-    border-color: #b40101;
-    color: #b40101;
+    border-color: #d0d0d0;
+    color: #888888;
 }
 
 /* 配送資訊 */
+/* UX 痛點：配送選項字體太小，不易閱讀 */
 .shipping-info,
 .payment-info {
     padding: 15px;
@@ -712,18 +734,18 @@ button {
 
 .shipping-info h3,
 .payment-info h3 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 15px;
-    color: #333333;
+    color: #666666;
 }
 
 .shipping-option {
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
 .shipping-option label {
-    font-size: 14px;
-    color: #666666;
+    font-size: 11px;
+    color: #999999;
     margin-left: 5px;
 }
 
@@ -796,6 +818,14 @@ button {
 .description-content {
     line-height: 1.8;
     color: #666666;
+}
+
+/* UX 痛點：商品說明文字太小，難以閱讀 */
+.description-content p,
+.description-content li {
+    font-size: 11px;
+    color: #999999;
+    line-height: 1.4;
 }
 
 .description-content ul {
@@ -1123,6 +1153,28 @@ button {
     to {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+/* ========== UX 痛點：不明顯的 Toast 通知 ========== */
+/* 問題：Toast 太小、顏色不明顯、位置太邊緣 */
+.toast-subtle {
+    background-color: #e8e8e8;
+    color: #888888;
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    font-size: 11px;
+    animation: fadeInSlow 0.5s ease-out;
+}
+
+@keyframes fadeInSlow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.6;
     }
 }
 
