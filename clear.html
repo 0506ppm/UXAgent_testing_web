@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>清除購物車資料</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #b40101;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #900000;
+        }
+        .success {
+            color: green;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 重置網站資料</h1>
+        <p>點擊下方按鈕清除購物車和所有瀏覽器快取</p>
+        <button onclick="clearAll()">清除所有資料</button>
+        <button onclick="goHome()">回到首頁</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function clearAll() {
+            // 清除 localStorage
+            localStorage.clear();
+
+            // 清除 sessionStorage
+            sessionStorage.clear();
+
+            // 清除所有 cookies
+            document.cookie.split(";").forEach(function(c) {
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
+
+            document.getElementById('message').innerHTML = '<div class="success">✅ 已清除所有資料！<br>請點擊「回到首頁」</div>';
+        }
+
+        function goHome() {
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>

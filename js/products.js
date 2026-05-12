@@ -93,25 +93,17 @@
     // 處理加入購物車
     function handleAddToCart(productId) {
         const success = addToCart(productId, 1);
-
-        if (success) {
-            showToast('商品已加入購物車！', 'success');
-        } else {
-            showToast('加入購物車失敗', 'error');
-        }
+        // UX 痛點：沒有任何反饋
     }
 
     // 處理立即購買
     function handleBuyNow(productId) {
         const success = addToCart(productId, 1);
-
+        // UX 痛點：沒有任何反饋
         if (success) {
-            showToast('商品已加入購物車，即將前往結帳...', 'success');
             setTimeout(() => {
                 window.location.href = 'cart.html';
             }, 1000);
-        } else {
-            showToast('操作失敗', 'error');
         }
     }
 

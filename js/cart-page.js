@@ -173,7 +173,6 @@
 
         if (item && confirm(`確定要移除「${item.name}」嗎？`)) {
             removeFromCart(productId);
-            showToast('商品已從購物車移除', 'success');
             renderCart();
         }
     }
@@ -217,7 +216,6 @@
         const cart = getCart();
 
         if (cart.length === 0) {
-            showToast('購物車是空的', 'warning');
             return;
         }
 
@@ -226,14 +224,10 @@
         const confirmed = confirm(`確定要結帳嗎？\n總金額：NT$ ${total}`);
 
         if (confirmed) {
-            // 模擬結帳成功
-            showToast('訂單已送出！感謝您的購買', 'success');
-
-            // 清空購物車
+            // 模擬結帳成功，清空購物車
             setTimeout(() => {
                 clearCart();
                 renderCart();
-                showToast('購物車已清空', 'success');
             }, 1500);
         }
     }

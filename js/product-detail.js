@@ -26,8 +26,7 @@
         currentProduct = getProduct(productId);
 
         if (!currentProduct) {
-            // 商品不存在
-            showToast('找不到該商品', 'error');
+            // 商品不存在，直接導回首頁
             setTimeout(() => {
                 window.location.href = 'products.html';
             }, 2000);
@@ -165,12 +164,7 @@
         const productId = urlParams.get('id');
 
         const success = addToCart(productId, currentQuantity);
-
-        if (success) {
-            showToast(`已加入 ${currentQuantity} 件商品至購物車！`, 'success');
-        } else {
-            showToast('加入購物車失敗', 'error');
-        }
+        // UX 痛點：沒有任何反饋通知，使用者不知道是否成功加入購物車
     }
 
     // 處理立即購買
@@ -181,20 +175,16 @@
         const productId = urlParams.get('id');
 
         const success = addToCart(productId, currentQuantity);
-
+        // UX 痛點：沒有任何反饋通知
         if (success) {
-            showToast('商品已加入購物車，即將前往結帳...', 'success');
             setTimeout(() => {
                 window.location.href = 'cart.html';
             }, 1000);
-        } else {
-            showToast('操作失敗', 'error');
         }
     }
 
     // 處理加入收藏
     function handleAddToWishlist() {
-        showToast('已加入我的收藏', 'success');
         // 這裡可以實作收藏功能
     }
 

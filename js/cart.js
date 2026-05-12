@@ -107,35 +107,6 @@ function updateCartBadge() {
     }
 }
 
-// 顯示 Toast 提示
-// UX 痛點：通知太不明顯，使用者可能看不到
-function showToast(message, type = 'success') {
-    let container = document.getElementById('toast-container');
-
-    if (!container) {
-        container = document.createElement('div');
-        container.id = 'toast-container';
-        container.className = 'toast-container';
-        document.body.appendChild(container);
-    }
-
-    const toast = document.createElement('div');
-    // UX 痛點：使用不明顯的樣式
-    toast.className = `toast toast-subtle`;
-    toast.textContent = message;
-    toast.setAttribute('role', 'alert');
-
-    container.appendChild(toast);
-
-    // UX 痛點：只顯示 1.5 秒就消失，使用者很容易錯過
-    setTimeout(() => {
-        toast.style.animation = 'slideOut 0.3s ease-in';
-        setTimeout(() => {
-            toast.remove();
-        }, 300);
-    }, 1500);
-}
-
 // 頁面載入時更新購物車徽章
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', updateCartBadge);

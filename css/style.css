@@ -545,12 +545,12 @@ button {
 }
 
 .price-row .original-price {
-    font-size: 16px;
+    font-size: 18px;
     color: #bbbbbb;
 }
 
 .price-row .sale-price {
-    font-size: 28px;
+    font-size: 19px;
     color: #999999;
 }
 
@@ -559,7 +559,7 @@ button {
     color: #999999;
     padding: 3px 7px;
     border-radius: 3px;
-    font-size: 11px;
+    font-size: 17px;
 }
 
 .price-validity {
@@ -651,11 +651,11 @@ button {
 }
 
 .quantity-btn {
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
     border: none;
     background-color: #f5f5f5;
-    font-size: 14px;
+    font-size: 10px;
     color: #999999;
     cursor: pointer;
 }
@@ -665,13 +665,13 @@ button {
 }
 
 #quantity-input {
-    width: 45px;
-    height: 28px;
+    width: 35px;
+    height: 18px;
     text-align: center;
     border: none;
     border-left: 1px solid #e0e0e0;
     border-right: 1px solid #e0e0e0;
-    font-size: 13px;
+    font-size: 9px;
 }
 
 /* 操作按鈕 */
@@ -996,20 +996,21 @@ button {
 }
 
 .cart-qty-btn {
-    width: 30px;
-    height: 30px;
+    width: 18px;
+    height: 18px;
     border: 1px solid #e0e0e0;
     background-color: #f5f5f5;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 10px;
 }
 
 .cart-qty-input {
-    width: 50px;
-    height: 30px;
+    width: 35px;
+    height: 18px;
     text-align: center;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
+    font-size: 9px;
 }
 
 .cart-item-remove {
