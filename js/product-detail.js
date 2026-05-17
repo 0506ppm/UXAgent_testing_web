@@ -49,11 +49,29 @@
             breadcrumb.textContent = currentProduct.name;
         }
 
+        // 更新商品標題
+        const productTitle = document.getElementById('product-title');
+        if (productTitle) {
+            productTitle.textContent = currentProduct.name;
+        }
+
+        // 更新商品編號 (SKU)
+        const productSku = document.getElementById('product-sku');
+        if (productSku && currentProduct.sku) {
+            productSku.textContent = currentProduct.sku;
+        }
+
+        // 更新價格
+        updatePriceSection();
+
         // 更新商品圖片
         updateProductImages();
 
-        // 不需要更新其他內容，因為 HTML 中已經有預設值
-        // 如果需要動態更新，可以在這裡添加
+        // 更新商品描述
+        updateProductDescription();
+
+        // 更新規格
+        updateProductSpecifications();
     }
 
     // 更新商品圖片
@@ -71,6 +89,117 @@
                 thumb.src = currentProduct.images[index];
             }
         });
+    }
+
+    // 更新價格區域
+    function updatePriceSection() {
+        if (!currentProduct) return;
+
+        const priceSection = document.querySelector('.price-section');
+        if (!priceSection) return;
+
+        const priceRow = priceSection.querySelector('.price-row');
+        if (!priceRow) return;
+
+        // 計算折扣
+        let discountPercent = null;
+        if (currentProduct.originalPrice && currentProduct.price < currentProduct.originalPrice) {
+            discountPercent = Math.round((currentProduct.price / currentProduct.originalPrice) * 10);
+        }
+
+        // 更新價格顯示
+        priceRow.innerHTML = `
+            ${currentProduct.originalPrice ? `<span class="original-price">NT$ ${currentProduct.originalPrice}</span>` : ''}
+            <span class="sale-price">NT$ ${currentProduct.price}</span>
+            ${discountPercent ? `<span class="discount-badge">${discountPercent}折</span>` : ''}
+        `;
+    }
+
+    // 更新商品描述
+    function updateProductDescription() {
+        if (!currentProduct || !currentProduct.description) return;
+
+        // 更新商品特點列表
+        const highlightsList = document.querySelector('.product-highlights ul');
+        if (highlightsList) {
+            const descriptions = currentProduct.description.split('。').filter(d => d.trim());
+            highlightsList.innerHTML = descriptions.map(desc => `<li>✓ ${desc.trim()}</li>`).join('');
+        }
+
+        // 更新詳細說明標籤頁中的描述
+        const descriptionContent = document.querySelector('#tab-description .description-content');
+        if (descriptionContent) {
+            // 保留基本結構，只更新商品名稱和描述
+            const h3 = descriptionContent.querySelector('h3');
+            if (h3) {
+                h3.textContent = currentProduct.name;
+            }
+            const firstP = descriptionContent.querySelector('p');
+            if (firstP) {
+                firstP.textContent = currentProduct.description;
+            }
+        }
+    }
+
+    // 更新規格
+    function updateProductSpecifications() {
+        if (!currentProduct) return;
+
+        // 更新商品規格區域
+        const specsSection = document.querySelector('.product-specs');
+        if (specsSection && (currentProduct.weight || currentProduct.size)) {
+            specsSection.innerHTML = `
+                ${currentProduct.weight ? `
+                <div class="spec-row">
+                    <span class="spec-label">重量：</span>
+                    <span class="spec-value">${currentProduct.weight}</span>
+                </div>` : ''}
+                ${currentProduct.size ? `
+                <div class="spec-row">
+                    <span class="spec-label">尺寸：</span>
+                    <span class="spec-value">${currentProduct.size}</span>
+                </div>` : ''}
+                <div class="spec-row">
+                    <span class="spec-label">保存方式：</span>
+                    <span class="spec-value">常溫</span>
+                </div>
+            `;
+        }
+
+        // 更新規格說明標籤頁中的規格表
+        const specTable = document.querySelector('#tab-specifications .spec-table');
+        if (specTable) {
+            const tbody = specTable.querySelector('tbody') || specTable;
+            tbody.innerHTML = `
+                ${currentProduct.sku ? `
+                <tr>
+                    <th>商品編號</th>
+                    <td>${currentProduct.sku}</td>
+                </tr>` : ''}
+                ${currentProduct.weight ? `
+                <tr>
+                    <th>重量</th>
+                    <td>${currentProduct.weight}</td>
+                </tr>` : ''}
+                ${currentProduct.size ? `
+                <tr>
+                    <th>尺寸</th>
+                    <td>${currentProduct.size}</td>
+                </tr>` : ''}
+                <tr>
+                    <th>保存方式</th>
+                    <td>常溫保存</td>
+                </tr>
+                <tr>
+                    <th>保存期限</th>
+                    <td>180天</td>
+                </tr>
+                <tr>
+                    <th>產地</th>
+                    <td>台灣</td>
+                </tr>
+            `;
+        }
     }
 
     // 設定事件監聽器
