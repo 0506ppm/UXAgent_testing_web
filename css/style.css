@@ -151,6 +151,13 @@ button {
     border-bottom-color: #d0d0d0;
 }
 
+.nav-link.disabled {
+    color: #cccccc;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 /* ========== 麵包屑 ========== */
 .breadcrumb {
     padding: 15px 0;
