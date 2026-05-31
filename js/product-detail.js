@@ -241,9 +241,11 @@
 
         if (quantityInput) {
             quantityInput.addEventListener('change', (e) => {
+                const previousQuantity = currentQuantity;
                 const value = parseInt(e.target.value) || 1;
                 currentQuantity = Math.max(1, Math.min(10, value));
                 quantityInput.value = currentQuantity;
+                showQuantityFeedback(previousQuantity, currentQuantity);
                 updateOrderSummary();
             });
         }
@@ -294,13 +296,53 @@
 
     // 更新數量
     function updateQuantity(delta) {
+        const previousQuantity = currentQuantity;
         currentQuantity = Math.max(1, Math.min(10, currentQuantity + delta));
 
         const quantityInput = document.getElementById('quantity-input');
         if (quantityInput) {
             quantityInput.value = currentQuantity;
         }
+
+        showQuantityFeedback(previousQuantity, currentQuantity);
         updateOrderSummary();
+    }
+
+    // 顯示數量變化回饋
+    function showQuantityFeedback(previousQuantity, newQuantity) {
+        const changeMessageEl = document.getElementById('quantity-change-message');
+        const quantityInput = document.getElementById('quantity-input');
+
+        if (quantityInput) {
+            quantityInput.setAttribute('aria-valuenow', String(newQuantity));
+            quantityInput.setAttribute('aria-valuetext', `${newQuantity} 件`);
+        }
+
+        if (!changeMessageEl) {
+            return;
+        }
+
+        if (previousQuantity !== newQuantity) {
+            let changeText = '';
+            if (newQuantity > previousQuantity) {
+                changeText = `已從 ${previousQuantity} 件增加至 ${newQuantity} 件`;
+            } else if (newQuantity < previousQuantity) {
+                changeText = `已從 ${previousQuantity} 件減少至 ${newQuantity} 件`;
+            }
+
+            if (changeText) {
+                changeMessageEl.textContent = changeText;
+                changeMessageEl.hidden = false;
+                changeMessageEl.classList.remove('quantity-feedback--updated');
+                void changeMessageEl.offsetWidth;
+                changeMessageEl.classList.add('quantity-feedback--updated');
+                return;
+            }
+        }
+
+        changeMessageEl.textContent = '';
+        changeMessageEl.hidden = true;
+        changeMessageEl.classList.remove('quantity-feedback--updated');
     }
 
     // 處理加入購物車
