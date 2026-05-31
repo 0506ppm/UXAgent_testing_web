@@ -92,8 +92,11 @@
 
     // 處理加入購物車
     function handleAddToCart(productId) {
+        const product = getProduct(productId);
         const success = addToCart(productId, 1);
-        // UX 痛點：沒有任何反饋
+        if (success && product) {
+            showCartToast(product.name, 1);
+        }
     }
 
     // 處理立即購買

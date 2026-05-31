@@ -107,6 +107,30 @@ function updateCartBadge() {
     }
 }
 
+// 顯示加入購物車成功通知
+function showCartToast(productName, quantity) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `
+        <div class="toast-icon">✓</div>
+        <div class="toast-body">
+            <div class="toast-title">已加入購物車</div>
+            <div class="toast-product">${productName}${quantity > 1 ? ` × ${quantity}` : ''}</div>
+        </div>
+        <a href="cart.html" class="toast-cart-link">前往購物車</a>
+    `;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add('toast-hide');
+        toast.addEventListener('animationend', () => toast.remove(), { once: true });
+    }, 3000);
+}
+
 // 頁面載入時更新購物車徽章
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', updateCartBadge);

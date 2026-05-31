@@ -36,6 +36,19 @@
         renderProduct();
     }
 
+    // 更新即時訂單摘要
+    function updateOrderSummary() {
+        if (!currentProduct) return;
+        const nameEl = document.getElementById('summary-name');
+        const unitPriceEl = document.getElementById('summary-unit-price');
+        const qtyEl = document.getElementById('summary-qty');
+        const totalEl = document.getElementById('summary-total');
+        if (nameEl) nameEl.textContent = currentProduct.name;
+        if (unitPriceEl) unitPriceEl.textContent = `NT$ ${currentProduct.price.toLocaleString()}`;
+        if (qtyEl) qtyEl.textContent = currentQuantity;
+        if (totalEl) totalEl.textContent = `NT$ ${(currentProduct.price * currentQuantity).toLocaleString()}`;
+    }
+
     // 渲染商品資訊
     function renderProduct() {
         if (!currentProduct) return;
@@ -72,6 +85,9 @@
 
         // 更新規格
         updateProductSpecifications();
+
+        // 更新訂單摘要
+        updateOrderSummary();
     }
 
     // 更新商品圖片
@@ -228,6 +244,7 @@
                 const value = parseInt(e.target.value) || 1;
                 currentQuantity = Math.max(1, Math.min(10, value));
                 quantityInput.value = currentQuantity;
+                updateOrderSummary();
             });
         }
 
@@ -283,6 +300,7 @@
         if (quantityInput) {
             quantityInput.value = currentQuantity;
         }
+        updateOrderSummary();
     }
 
     // 處理加入購物車
@@ -293,7 +311,9 @@
         const productId = urlParams.get('id');
 
         const success = addToCart(productId, currentQuantity);
-        // UX 痛點：沒有任何反饋通知，使用者不知道是否成功加入購物車
+        if (success) {
+            showCartToast(currentProduct.name, currentQuantity);
+        }
     }
 
     // 處理立即購買
@@ -304,11 +324,8 @@
         const productId = urlParams.get('id');
 
         const success = addToCart(productId, currentQuantity);
-        // UX 痛點：沒有任何反饋通知
         if (success) {
-            setTimeout(() => {
-                window.location.href = 'cart.html';
-            }, 1000);
+            window.location.href = 'cart.html';
         }
     }
 
