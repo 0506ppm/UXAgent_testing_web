@@ -642,8 +642,32 @@ button {
 /* UX 痛點：數量按鈕太小，難以點擊 */
 .quantity-section {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
+}
+
+.quantity-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quantity-feedback {
+    margin: 0;
+    padding: 10px 14px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #2e7d32;
+    line-height: 1.5;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.quantity-feedback--updated {
+    background-color: #e8f4ea;
+    border-color: #4caf50;
 }
 
 .quantity-section label {
@@ -664,12 +688,14 @@ button {
     border: none;
     background-color: #f5f5f5;
     font-size: 22px;
-    color: #555555;
+    font-weight: bold;
+    color: #b40101;
     cursor: pointer;
 }
 
 .quantity-btn:hover {
-    background-color: #eeeeee;
+    background-color: #fff5f5;
+    color: #b40101;
 }
 
 #quantity-input {

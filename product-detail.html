@@ -186,32 +186,48 @@
                     <!-- 數量選擇 -->
                     <div class="quantity-section">
                         <label for="quantity-input">數量：</label>
-                        <div class="quantity-control">
-                            <button
-                                type="button"
-                                id="quantity-decrease"
-                                class="quantity-btn"
-                                aria-label="減少數量"
-                            >
-                                -
-                            </button>
-                            <input
-                                type="number"
-                                id="quantity-input"
-                                name="quantity"
-                                value="1"
-                                min="1"
-                                max="10"
-                                aria-label="購買數量"
-                            />
-                            <button
-                                type="button"
-                                id="quantity-increase"
-                                class="quantity-btn"
-                                aria-label="增加數量"
-                            >
-                                +
-                            </button>
+                        <div class="quantity-control-group">
+                            <div class="quantity-control">
+                                <button
+                                    type="button"
+                                    id="quantity-decrease"
+                                    class="quantity-btn"
+                                    aria-label="減少數量"
+                                    aria-controls="quantity-change-message"
+                                >
+                                    -
+                                </button>
+                                <input
+                                    type="number"
+                                    id="quantity-input"
+                                    name="quantity"
+                                    value="1"
+                                    min="1"
+                                    max="10"
+                                    aria-label="購買數量"
+                                    aria-valuemin="1"
+                                    aria-valuemax="10"
+                                    aria-valuenow="1"
+                                    aria-valuetext="1 件"
+                                />
+                                <button
+                                    type="button"
+                                    id="quantity-increase"
+                                    class="quantity-btn"
+                                    aria-label="增加數量"
+                                    aria-controls="quantity-change-message"
+                                >
+                                    +
+                                </button>
+                            </div>
+                            <p
+                                id="quantity-change-message"
+                                class="quantity-feedback"
+                                role="status"
+                                aria-live="polite"
+                                aria-atomic="true"
+                                hidden
+                            ></p>
                         </div>
                     </div>
 
